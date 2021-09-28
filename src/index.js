@@ -2,7 +2,7 @@ const merging = (left, right) => {
   const res = [];
 
   while (left.length && right.length) {
-    if (left[o] < right[0]) {
+    if (left[0] < right[0]) {
       res.push(left.shift());
     } else {
       res.push(right.shift());
@@ -30,7 +30,7 @@ const m = (arr) => {
   const left = arr.slice(0, mid);
   const right = arr.slice(mid, arr.length);
 
-  merging(m(left), m(right));
+  return merging(m(left), m(right));
 };
 
 console.log(m([4, 3, 2, 4, 5, 677, 1]));
